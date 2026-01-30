@@ -8,9 +8,11 @@ jobs:
         operating-system: [ubuntu-latest, windows-latest]
         node-version: [12, 14, 16]
         include: 
+          # this will create a new combination
           - operating-system: ubuntu-latest
             node-version: 18
         exclude:
+          # this will exlcude this combination
           - operating-system: windows-latest
             node-version: 12
     runs-on: ${{ matrix.operating-system }}
