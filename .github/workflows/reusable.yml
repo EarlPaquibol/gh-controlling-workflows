@@ -8,14 +8,15 @@ on:
         default: dist
         type: string
     outputs:
-      description: Outcome of deployment
-      result: ${{ jobs.deploy.outputs.deploy-result }}
+      result:
+        description: Outcome of deployment
+        value: ${{ jobs.deploy.outputs.deploy-result }}
     #secrets:
       #some-secret:
         #required: false
 jobs:
   deploy:
-    output: 
+    outputs: 
       deploy-result: ${{ steps.result-output.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
